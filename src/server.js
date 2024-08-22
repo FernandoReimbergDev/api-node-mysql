@@ -1,9 +1,9 @@
 require('dotenv').config();
 const fastify = require('fastify')({ logger: true });
-const userRoutes = require('./routes/usersRoutes');
+const appRoutes = require('./routes/routes');
 
-// Registrar as rotas de usuários
-fastify.register(userRoutes);
+// Registrar as rotas da aplicação
+fastify.register(appRoutes);
 
 // Iniciar o servidor
 const start = async () => {
