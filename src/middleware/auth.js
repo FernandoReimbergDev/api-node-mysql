@@ -11,7 +11,7 @@ async function auth(req, reply) {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
+    req.user = decoded;  // Define `req.user` com o usuário decodificado do token
   } catch (err) {
     return reply.status(401).send({ error: 'Token inválido' });
   }
